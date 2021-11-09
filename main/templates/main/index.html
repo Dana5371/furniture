@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+      </nav>
+      <img src="{% static 'img/78.jpg' %}" style="width: 100%;">
+      <div style="margin-top: 30px; margin-bottom: 30px" class="container overflow-hidden">
+        <div class="row gy-5">
+            {% for category in categories %}
+          {% if category.parent %}
+          <div class="col-6">
+              <div class="p-3 border bg-light"><a href="{% url 'product-list' category.slug %}" style="color: #0E6655;text-decoration: none;">{{ category.title }}</a></div>
+          </div>
+          {% endif %}
+{% endfor %}
+{% endblock %}

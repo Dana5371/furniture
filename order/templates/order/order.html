@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+ 
+<form method="post" class="row g-3">
+  {% csrf_token %}
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">{{ forms.email.label_tag }}</label>
+    <input type="email" name="email" class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">{{ forms.phone.label_tag }}</label>
+    <input type="text" name="phone" class="form-control" id="inputPassword4">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">{{ forms.address.label_tag }}</label>
+    <input type="text" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">{{ forms.city.label_tag }}</label>
+    <input type="text" name="city" class="form-control" id="inputCity">
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">{{ forms.name_of_product.label_tag }}</label>
+    <select name="name_of_product" id="inputState" class="form-select">
+      <option value="{{ product.id }}" selected>{{ product }}</option>
+      
+    </select>
+  </div>
+  <div class="col-12">
+   <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+</form>
+
+   
+
+{% endblock %}
